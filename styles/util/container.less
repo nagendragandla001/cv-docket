@@ -1,0 +1,24 @@
+@import "../core//custom-vars.less";
+
+.container,
+.container-fluid {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  padding: 0 15px;
+}
+
+.make-container(@minWidth, @breakPoint) {
+  @media (min-width: @minWidth) {
+    .container {
+      max-width: @breakPoint;
+    }
+  }
+}
+
+.make-container(@screen-xs-min, @screen-xs);
+.make-container(@screen-sm-min, @screen-sm);
+.make-container(@screen-md-min, @screen-md);
+.make-container(@screen-lg-min, @screen-lg);
+.make-container(@screen-xl-min, @screen-xl);
