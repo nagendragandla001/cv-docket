@@ -13,12 +13,14 @@ import Container from "../container";
 import { MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import LoginModal from "../../login";
+import AccountOpenModal from "../../accountOpen";
 
 const { Text, Title } = Typography;
 
 const PublicNav = (): JSX.Element => {
   const [visible, setVisible] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
+  const [accountModal, setAccountModal] = useState(false);
 
   const onMenuClose = (): void => {
     setVisible(false);
@@ -37,7 +39,7 @@ const PublicNav = (): JSX.Element => {
           </Button>
         </Menu.Item>
         <Menu.Item key="2" onClick={onMenuClose}>
-          <Button type="primary" block>
+          <Button type="primary" block onClick={(): void => setAccountModal(true)}>
             Create FREE Account
           </Button>
         </Menu.Item>
@@ -87,7 +89,7 @@ const PublicNav = (): JSX.Element => {
                   About Us
                 </Link>
               </Button>
-              <Button type="primary">Create FREE Account</Button>
+              <Button type="primary" onClick={(): void => setAccountModal(true)}>Create FREE Account</Button>
               <Button type="default" onClick={(): void => setLoginModal(true)}>Login</Button>
             </Space>
           </Col>
@@ -96,6 +98,11 @@ const PublicNav = (): JSX.Element => {
       {
         loginModal && (
           <LoginModal visible={loginModal} onCancel={(): void => setLoginModal(false)} />)
+      }
+      {
+        accountModal && (
+          <AccountOpenModal visible={accountModal} onCancel={(): void => setAccountModal(false)} />
+        )
       }
     </nav>
   );

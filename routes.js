@@ -17,6 +17,11 @@ const RoutesConstants = [
         name: 'About Us',
         page: 'aboutUs',
         type: 'public'
+    },
+    {
+        name: 'Account',
+        page: 'account',
+        type: 'private'
     }
 ];
 
