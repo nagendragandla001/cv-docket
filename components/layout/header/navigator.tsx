@@ -11,6 +11,7 @@ import {
 } from "antd";
 import Container from "../container";
 import { MenuOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 const { Text, Title } = Typography;
 
@@ -28,7 +29,9 @@ const PublicNav = (): JSX.Element => {
       <Menu mode={mode} className={`common-menu ${className}`}>
         <Menu.Item key="1" onClick={onMenuClose}>
           <Button type="link" block className="text-primary">
-            About Us
+            <Link href="/aboutUs">
+              About Us
+            </Link>
           </Button>
         </Menu.Item>
         <Menu.Item key="2" onClick={onMenuClose}>
@@ -62,19 +65,25 @@ const PublicNav = (): JSX.Element => {
                 ></Button>
               </Dropdown>
               <Title level={3} className="text-primary text-bold">
-                CV DOCKET
+                <Link href="/">
+                  CV DOCKET
+              </Link>
               </Title>
             </Space>
           </Col>
           <Col xs={{ span: 0 }} lg={{ span: 16 }}>
             <Title level={3} className="text-primary text-bold">
-              CV DOCKET
+              <Link href="/">
+                CV DOCKET
+              </Link>
             </Title>
           </Col>
           <Col xs={{ span: 0 }} lg={{ span: 8 }}>
             <Space>
               <Button type="link" className="text-primary">
-                About Us
+                <Link href="/aboutUs">
+                  About Us
+                </Link>
               </Button>
               <Button type="primary">Create FREE Account</Button>
               <Button type="default">Login</Button>
