@@ -12,11 +12,13 @@ import {
 import Container from "../container";
 import { MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
+import LoginModal from "../../login";
 
 const { Text, Title } = Typography;
 
 const PublicNav = (): JSX.Element => {
   const [visible, setVisible] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
 
   const onMenuClose = (): void => {
     setVisible(false);
@@ -40,7 +42,7 @@ const PublicNav = (): JSX.Element => {
           </Button>
         </Menu.Item>
         <Menu.Item key="3" onClick={onMenuClose}>
-          <Button type="default" block>
+          <Button type="default" block onClick={(): void => setLoginModal(true)}>
             Login
           </Button>
         </Menu.Item>
@@ -86,11 +88,15 @@ const PublicNav = (): JSX.Element => {
                 </Link>
               </Button>
               <Button type="primary">Create FREE Account</Button>
-              <Button type="default">Login</Button>
+              <Button type="default" onClick={(): void => setLoginModal(true)}>Login</Button>
             </Space>
           </Col>
         </Row>
       </Container>
+      {
+        loginModal && (
+          <LoginModal visible={loginModal} onCancel={(): void => setLoginModal(false)} />)
+      }
     </nav>
   );
 };
