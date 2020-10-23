@@ -1,6 +1,6 @@
 import { Col, Row, Space } from "antd";
 import React from "react";
-import Container from "../../components/layout/container";
+import Container from "./layout/container";
 import {
   CopyrightOutlined,
   FacebookFilled,

@@ -28,24 +28,19 @@ const LoginModal = (props: PropsModal) => {
                 onFinish={finishHandler}
             >
                 <Form.Item
-                    label="User Name"
+                    label="Search with official email id or mobile number"
                     name="userName"
-                    rules={[{ required: true, message: 'Please input your username!' }]}
+                    rules={
+                        [
+                            { required: true, message: 'Required field!' },
+                            { whitespace: true, message: 'Field can not be empty!!' }
+
+                        ]}
                 >
-                    <Input placeholder="Input user name" />
-                </Form.Item>
-                <Form.Item
-                    label="Password"
-                    name="password"
-                    rules={[{ required: true, message: 'Please inputpassword!' }]}
-                >
-                    <Input.Password placeholder="Input Password" />
+                    <Input placeholder="Official email id or Mobile number" />
                 </Form.Item>
                 <Form.Item className="text-right">
-                    <Space>
-                        <Button type="default" onClick={onCancel}>Cancel</Button>
-                        <Button type="primary" htmlType="submit">Submit</Button>
-                    </Space>
+                    <Button type="primary" htmlType="submit">Search</Button>
                 </Form.Item>
             </Form>
         </Modal>

@@ -2,7 +2,7 @@ import "../styles/globals.less";
 
 import { Layout } from "antd";
 import PublicNav from "../components/layout/header/navigator";
-import PublicFooter from "../screens/public/footer.component";
+import PublicFooter from "../components/footer.component";
 
 const { Header, Content, Footer } = Layout;
 

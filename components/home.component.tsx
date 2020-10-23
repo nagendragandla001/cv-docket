@@ -1,6 +1,6 @@
 import { Card, Col, Image, Row, Typography } from "antd";
 import React from "react";
-import Container from "../../components/layout/container";
+import Container from "./layout/container";
 
 const { Title, Text } = Typography;
 const { Meta } = Card;
