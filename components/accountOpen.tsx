@@ -1,4 +1,4 @@
-import { Button, Form, Input, Modal } from 'antd';
+import { Button, Card, Divider, Form, Input, Modal } from 'antd';
 import React from 'react';
 import { useRouter } from 'next/router';
 
@@ -46,18 +46,21 @@ const AccountOpenModal = (props: PropsModal) => {
                     <Input placeholder="Please enter your company name" suffix=".cvdocket.com" />
                 </Form.Item>
 
-                <Form.Item name="pocName" label="POC Name"
+                <Divider plain>POC Details</Divider>
+
+
+                <Form.Item name="pocName" label="Name"
                     rules={[
-                        { required: true, message: "Name is Mandatory!" },
+                        { required: true, message: "Name is Required!" },
                         {
                             whitespace: true, message: 'Name should not be empty'
                         }
                     ]}
                 >
-                    <Input placeholder="POC Name" />
+                    <Input placeholder="Enter Name" />
                 </Form.Item>
 
-                <Form.Item name="pocContact" label="POC Contact"
+                <Form.Item name="pocContact" label="Contact Number"
                     rules={[
                         { required: true, message: "Contact number is Required!" },
                         {
@@ -65,17 +68,17 @@ const AccountOpenModal = (props: PropsModal) => {
                         }
                     ]}
                 >
-                    <Input placeholder="POC Contact" />
+                    <Input placeholder="Enter Contact Number" />
                 </Form.Item>
-                <Form.Item name="pocEmail" label="POC Email"
+                <Form.Item name="pocEmail" label="Email Id"
                     rules={[
-                        { required: true, message: "Email is Mandatory!" },
+                        { required: true, message: "Email is Required!" },
                         {
                             whitespace: true, message: 'Email should not be empty'
                         }
                     ]}
                 >
-                    <Input placeholder="POC Email" />
+                    <Input type="email" placeholder="Enter Email Id" />
                 </Form.Item>
 
                 <Form.Item className="text-right">
