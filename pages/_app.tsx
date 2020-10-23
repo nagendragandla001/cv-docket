@@ -14,7 +14,7 @@ const DefaultHead: React.FunctionComponent = () => {
       <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
       <meta key="author" name="author" content="Cvdocket" />
       <link rel="icon" href="/images/title_logo.png" />
-      <title>Cv Docket</title>
+      <title>CV Docket</title>
     </Head>
   )
 }
