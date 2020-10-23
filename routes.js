@@ -6,21 +6,31 @@ const RoutesConstants = [
     {
         name: '',
         page: 'index',
+        pattern: '',
         type: 'public'
     },
     {
         name: 'home',
+        pattern: '/home',
         page: 'home',
         type: 'public'
     },
     {
         name: 'About Us',
+        pattern: '/aboutUs',
         page: 'aboutUs',
         type: 'public'
     },
     {
         name: 'Account',
+        pattern: 'account/:id',
         page: 'account',
+        type: 'private'
+    },
+    {
+        name: 'User',
+        pattern: 'user',
+        page: 'user',
         type: 'private'
     }
 ];

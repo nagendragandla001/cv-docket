@@ -5,15 +5,7 @@ import "../styles/Home.module.less";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>CV Docket</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <HomeComponent />
-      </main>
-    </div>
+    <HomeComponent />
   );
 };
 
