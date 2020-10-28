@@ -30,11 +30,7 @@ const promotors = [
   },
 ];
 
-
 const HomeComponent = (): JSX.Element => {
-  useEffect(() => {
-    console.log('isMobile', isMobile);
-  }, []);
   return (
     <>
       <div className="banner-container">
@@ -176,16 +172,18 @@ const HomeComponent = (): JSX.Element => {
           </Col>
         </Row>
       </Container>
-      <Carousel effect="fade">
-        <Paragraph className="corousel">
-          It's an immense pleasure to work with such an young team
+      <div>
+        <Carousel effect="fade">
+          <Paragraph className="corousel">
+            It's an immense pleasure to work with such an young team
             <Text className="text-bold"> - Sybriz Technologies</Text>
-        </Paragraph>
-        <Paragraph className="corousel">
-          Kudos to the team, You made our daily life is more easier
+          </Paragraph>
+          <Paragraph className="corousel">
+            Kudos to the team, You made our daily life is more easier
             <Text className="text-bold"> - Recruiter - mynameisng.com</Text>
-        </Paragraph>
-      </Carousel>
+          </Paragraph>
+        </Carousel>
+      </div>
       <Container>
         <Row className="p-top-3">
           <Col span={24}>
