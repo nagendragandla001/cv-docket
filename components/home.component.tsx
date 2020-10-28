@@ -31,28 +31,7 @@ const promotors = [
 const HomeComponent = (): JSX.Element => {
   return (
     <>
-      <div className="home-banner">
-        <Container>
-          <Row>
-            <Col span={24}>
-              <Row>
-                <Col xs={{ span: 24 }} lg={{ span: 16 }} className="m-v-auto">
-                  <Title className="banner-name">
-                    Simple, Better & Effective
-                  </Title>
-                </Col>
-                <Col xs={{ span: 24 }} lg={{ span: 8 }}>
-                  <Image
-                    src="/images/file_folder.svg"
-                    alt="CV Docket"
-                    preview={false}
-                  />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      <Image className="home-banner" src="/images/4565.jpg" preview={false} alt="CV Docket" />
       <Container>
         <Row>
           <Col xs={{ span: 24 }} lg={{ span: 0 }} className="m-main-title">
@@ -66,9 +45,11 @@ const HomeComponent = (): JSX.Element => {
             <Row gutter={24}>
               <Col span={24}>
                 <Image
+                  className="home-illustrations"
                   src="/images/spreadsheet.svg"
                   alt="sheet"
                   preview={false}
+
                 />
               </Col>
               <Col span={24}>
@@ -83,6 +64,7 @@ const HomeComponent = (): JSX.Element => {
             <Row gutter={24}>
               <Col span={8}>
                 <Image
+                  className="home-illustrations"
                   src="/images/spreadsheet.svg"
                   alt="sheet"
                   preview={false}
@@ -101,9 +83,11 @@ const HomeComponent = (): JSX.Element => {
             <Row gutter={24}>
               <Col span={24}>
                 <Image
-                  src="/images/review.svg"
+                  className="home-illustrations"
+                  src="/images/status1.svg"
                   alt="feedback"
                   preview={false}
+
                 />
               </Col>
               <Col span={24}>
@@ -111,7 +95,7 @@ const HomeComponent = (): JSX.Element => {
                   Single platform for entire candidate feedback system
                 </Title>
                 <Text>
-                  No need to maintain any sheets for candidate's information
+                  Feedback will be stacked for the further rounds.
                 </Text>
               </Col>
             </Row>
@@ -124,14 +108,16 @@ const HomeComponent = (): JSX.Element => {
                   Single platform for entire candidate feedback system
                 </Title>
                 <Text>
-                  No need to maintain any sheets for candidate's information
+                  Feedback will be stacked for the further rounds.
                 </Text>
               </Col>
-              <Col span={12}>
+              <Col span={12} className="text-center">
                 <Image
-                  src="/images/review.svg"
+                  className="home-illustrations"
+                  src="/images/status1.svg"
                   alt="feedback"
                   preview={false}
+
                 />
               </Col>
             </Row>
@@ -141,9 +127,11 @@ const HomeComponent = (): JSX.Element => {
             <Row gutter={24}>
               <Col span={24}>
                 <Image
+                  className="home-illustrations"
                   src="/images/status.svg"
                   alt="feedback"
                   preview={false}
+
                 />
               </Col>
               <Col span={24}>
@@ -159,9 +147,11 @@ const HomeComponent = (): JSX.Element => {
             <Row gutter={24}>
               <Col span={8}>
                 <Image
+                  className="home-illustrations"
                   src="/images/status.svg"
                   alt="feedback"
                   preview={false}
+
                 />
               </Col>
               <Col span={12}>
@@ -177,9 +167,11 @@ const HomeComponent = (): JSX.Element => {
             <Row gutter={24}>
               <Col span={24}>
                 <Image
+                  className="home-illustrations"
                   src="/images/hiring.svg"
                   alt="feedback"
                   preview={false}
+
                 />
               </Col>
               <Col span={24}>
@@ -201,8 +193,9 @@ const HomeComponent = (): JSX.Element => {
                   recruiters.
                 </Text>
               </Col>
-              <Col span={8}>
+              <Col span={12} className="text-center">
                 <Image
+                  className="home-illustrations"
                   src="/images/hiring.svg"
                   alt="feedback"
                   preview={false}
@@ -215,9 +208,11 @@ const HomeComponent = (): JSX.Element => {
             <Row gutter={24}>
               <Col span={24}>
                 <Image
+                  className="home-illustrations"
                   src="/images/calendar_1.svg"
                   alt="feedback"
                   preview={false}
+
                 />
               </Col>
               <Col span={24}>
@@ -234,9 +229,11 @@ const HomeComponent = (): JSX.Element => {
             <Row gutter={24}>
               <Col span={8}>
                 <Image
+                  className="home-illustrations"
                   src="/images/calendar_1.svg"
                   alt="feedback"
                   preview={false}
+
                 />
               </Col>
               <Col span={12}>
@@ -265,10 +262,12 @@ const HomeComponent = (): JSX.Element => {
                       hoverable
                       cover={
                         <Image
+                          className="home-illustrations"
                           src={`/images/${p.key}.jpeg`}
                           alt={p.key}
                           className="profile-pic"
                           preview={false}
+
                         ></Image>
                       }
                     >

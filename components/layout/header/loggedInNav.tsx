@@ -23,9 +23,7 @@ const LoggedInNav = (): JSX.Element => {
                 <Row align="middle" justify="space-between">
                     <Col>
                         <Space>
-                            <Title level={3} className="text-primary text-bold">
-                                <Link href="/">CV DOCKET</Link>
-                            </Title>
+                            <Link href="/"><Title level={3} className="text-primary text-bold">CV DOCKET</Title></Link>
                         </Space>
                     </Col>
                     <Col>
@@ -35,9 +33,6 @@ const LoggedInNav = (): JSX.Element => {
                                 icon={<PlusOutlined />}
                                 onClick={(): void => setVisible(true)}
                             >Add Candidate</Button>
-                            {/* <Button type="link" icon={<SmileOutlined style={{ fontSize: '24px' }} />}>
-                                <CaretDownFilled style={{ fontSize: '24px' }} />
-                            </Button> */}
                         </Space>
                     </Col>
                 </Row>
