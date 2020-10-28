@@ -31,9 +31,17 @@ const promotors = [
 const HomeComponent = (): JSX.Element => {
   return (
     <>
-
+      <div className="banner-container">
+        <Container>
+          <Row>
+            <Col>
+              <Paragraph className="banner-label">Simple, Better & <br />Effective</Paragraph>
+            </Col>
+          </Row>
+        </Container>
+      </div>
       <Container>
-        <Row>
+        {/* <Row>
           <Col xs={{ span: 24 }} lg={{ span: 6 }} className="banner-label">
             <Paragraph>Simple, Better &</Paragraph>
             <Paragraph>Effective</Paragraph>
@@ -41,7 +49,7 @@ const HomeComponent = (): JSX.Element => {
           <Col xs={{ span: 24 }} lg={{ span: 18 }}>
             <Image className="home-banner" src="/images/4565.jpg" preview={false} alt="CV Docket" />
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col xs={{ span: 24 }} lg={{ span: 0 }} className="m-main-title text-center">
             <Title level={2}>Why to choose CV Docket?</Title>
