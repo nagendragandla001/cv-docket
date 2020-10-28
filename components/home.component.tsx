@@ -1,7 +1,8 @@
 import { AmazonOutlined, CheckCircleFilled, CheckOutlined, ExceptionOutlined } from "@ant-design/icons";
 import { Card, Carousel, Col, Image, Row, Timeline, Typography } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "./layout/container";
+import { isMobile } from 'react-device-detect';
 
 const { Title, Text, Paragraph } = Typography;
 const { Meta } = Card;
@@ -31,6 +32,9 @@ const promotors = [
 
 
 const HomeComponent = (): JSX.Element => {
+  useEffect(() => {
+    console.log('isMobile', isMobile);
+  }, []);
   return (
     <>
       <div className="banner-container">
