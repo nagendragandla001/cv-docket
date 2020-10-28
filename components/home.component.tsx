@@ -262,7 +262,6 @@ const HomeComponent = (): JSX.Element => {
                       hoverable
                       cover={
                         <Image
-                          className="home-illustrations"
                           src={`/images/${p.key}.jpeg`}
                           alt={p.key}
                           className="profile-pic"
