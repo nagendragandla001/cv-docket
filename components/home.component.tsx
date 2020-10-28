@@ -2,7 +2,7 @@ import { Card, Col, Image, Row, Typography } from "antd";
 import React from "react";
 import Container from "./layout/container";
 
-const { Title, Text } = Typography;
+const { Title, Text, Paragraph } = Typography;
 const { Meta } = Card;
 
 const promotors = [
@@ -31,10 +31,19 @@ const promotors = [
 const HomeComponent = (): JSX.Element => {
   return (
     <>
-      <Image className="home-banner" src="/images/4565.jpg" preview={false} alt="CV Docket" />
+
       <Container>
         <Row>
-          <Col xs={{ span: 24 }} lg={{ span: 0 }} className="m-main-title">
+          <Col xs={{ span: 24 }} lg={{ span: 6 }} className="banner-label">
+            <Paragraph>Simple, Better &</Paragraph>
+            <Paragraph>Effective</Paragraph>
+          </Col>
+          <Col xs={{ span: 24 }} lg={{ span: 18 }}>
+            <Image className="home-banner" src="/images/4565.jpg" preview={false} alt="CV Docket" />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={{ span: 24 }} lg={{ span: 0 }} className="m-main-title text-center">
             <Title level={2}>Why to choose CV Docket?</Title>
           </Col>
           <Col xs={{ span: 0 }} lg={{ span: 24 }} className="d-main-title">
