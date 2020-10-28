@@ -11,31 +11,29 @@ import {
 
 const PublicFooter: React.FunctionComponent = () => {
   return (
-    <div className="public-footer">
-      <Container>
-        <Row gutter={16} justify="space-between" align="middle">
-          <Col xs={{ span: 12 }} lg={{ span: 8 }} className="m-bottom-1">
-            Terms and Conditions
+    <Container>
+      <Row gutter={16} justify="space-between" align="middle">
+        <Col xs={{ span: 12 }} lg={{ span: 8 }} className="m-bottom-1">
+          Terms and Conditions
           </Col>
-          <Col xs={{ span: 12 }} lg={{ span: 8 }} className="m-bottom-1">
-            Copyrights <CopyrightOutlined /> CV Docket 2020
+        <Col xs={{ span: 12 }} lg={{ span: 8 }} className="m-bottom-1">
+          Copyrights <CopyrightOutlined /> CV Docket 2020
           </Col>
-          <Col
-            xs={{ span: 24 }}
-            lg={{ span: 8 }}
-            className="m-bottom-1 text-center"
-          >
-            Follow us on &nbsp;
+        <Col
+          xs={{ span: 24 }}
+          lg={{ span: 8 }}
+          className="m-bottom-1 text-center"
+        >
+          Follow us on &nbsp;
             <Space>
-              <FacebookFilled />
-              <TwitterCircleFilled />
-              <InstagramFilled />
-              <LinkedinFilled />
-            </Space>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+            <FacebookFilled />
+            <TwitterCircleFilled />
+            <InstagramFilled />
+            <LinkedinFilled />
+          </Space>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
