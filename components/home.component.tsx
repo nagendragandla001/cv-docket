@@ -178,7 +178,7 @@ const HomeComponent = (): JSX.Element => {
             <Tabs defaultActiveKey="2" centered type="card">
               <TabPane key="2" tab={<Button type="link"><GlobalOutlined /> Sybriz Technologies </Button>}>
                 <Card className="client">
-                  <Avatar size={80} icon={<UserOutlined />}></Avatar>
+                  <Avatar style={{ marginBottom: '0.5em' }} size={80} icon={<UserOutlined />}></Avatar>
                   <Paragraph className="font-size-large p-bottom-1">"It's an immense pleasure to work with such an young team. We see CV Docket significantly
                   reduce the time and efforts of our recruiters."</Paragraph>
                   <Text>Mr.Gajendra, CEO, Sybriz Technologies</Text>
@@ -186,7 +186,7 @@ const HomeComponent = (): JSX.Element => {
               </TabPane>
               <TabPane key="3" tab={<Button type="link"><DeploymentUnitOutlined /> NetworkingKKR Solutions </Button>}>
                 <Card className="client">
-                  <Avatar size={80} icon={<UserOutlined />}></Avatar>
+                  <Avatar style={{ marginBottom: '0.5em' }} size={80} icon={<UserOutlined />}></Avatar>
                   <Paragraph className="font-size-large p-bottom-1">"Kudos to the team, You made our daily life is more easier. We see CV Docket significantly
                   reduce the time and efforts of our recruiters."</Paragraph>
                   <Text>Mr.Kiran Reddy, CEO, NetworkingKKR Solutions</Text>
@@ -194,7 +194,7 @@ const HomeComponent = (): JSX.Element => {
               </TabPane>
               <TabPane key="4" tab={<Button type="link"><FileOutlined /> MyNameIsNG Solutions </Button>}>
                 <Card className="client">
-                  <Avatar size={80} icon={<UserOutlined />}></Avatar>
+                  <Avatar style={{ marginBottom: '0.5em' }} size={80} icon={<UserOutlined />}></Avatar>
                   <Paragraph className="font-size-large p-bottom-1">"It's an immense pleasure to work with such an young team. We see CV Docket significantly
                   reduce the time and efforts of our recruiters."</Paragraph>
                   <Text>Mr.Aravind, Head of the Talent Acquisitions, MyNameIsNG Solutions</Text>
