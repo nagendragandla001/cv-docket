@@ -68,17 +68,15 @@ const PublicNav = (): JSX.Element => {
                             </Dropdown>
                             <Title level={3} className="text-primary text-bold">
                                 <Link href="/">
-                                    CV DOCKET
-              </Link>
+                                    <Button type="link" icon={<Image src="/images/logo.png" className="logo" preview={false} alt="Logo" />} />
+                                </Link>
                             </Title>
                         </Space>
                     </Col>
                     <Col xs={{ span: 0 }} lg={{ span: 16 }}>
-                        <Title level={3} className="text-primary text-bold">
-                            <Link href="/">
-                                CV DOCKET
-              </Link>
-                        </Title>
+                        <Link href="/">
+                            <Button type="link" icon={<Image src="/images/logo.png" className="logo" preview={false} alt="Logo" />} />
+                        </Link>
                     </Col>
                     <Col xs={{ span: 0 }} lg={{ span: 8 }}>
                         <Space>
