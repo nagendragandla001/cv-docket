@@ -1,11 +1,12 @@
-import { AmazonOutlined, CheckCircleFilled, CheckOutlined, ExceptionOutlined } from "@ant-design/icons";
-import { Card, Carousel, Col, Image, Row, Timeline, Typography } from "antd";
+import { AmazonOutlined, CheckCircleFilled, CheckOutlined, DeploymentUnitOutlined, ExceptionOutlined, FileOutlined, GlobalOutlined, UserOutlined } from "@ant-design/icons";
+import { Avatar, Button, Card, Carousel, Col, Image, Row, Tabs, Timeline, Typography } from "antd";
 import React, { useEffect } from "react";
 import Container from "./layout/container";
 import { isMobile } from 'react-device-detect';
 
 const { Title, Text, Paragraph } = Typography;
 const { Meta } = Card;
+const { TabPane } = Tabs;
 
 const promotors = [
   {
@@ -171,20 +172,37 @@ const HomeComponent = (): JSX.Element => {
             </Timeline>
           </Col>
         </Row>
-      </Container>
-      <div>
-        <Carousel effect="fade">
-          <Paragraph className="corousel">
-            It's an immense pleasure to work with such an young team
-            <Text className="text-bold"> - Sybriz Technologies</Text>
-          </Paragraph>
-          <Paragraph className="corousel">
-            Kudos to the team, You made our daily life is more easier
-            <Text className="text-bold"> - Recruiter - mynameisng.com</Text>
-          </Paragraph>
-        </Carousel>
-      </div>
-      <Container>
+        <Row>
+          <Col span={24} className="text-center m-top-1">
+            <Title level={2} className="m-bottom-1">What Our Clients Say</Title>
+            <Tabs defaultActiveKey="2" centered type="card">
+              <TabPane key="2" tab={<Button type="link"><GlobalOutlined /> Sybriz Technologies </Button>}>
+                <Card className="client">
+                  <Avatar size={80} icon={<UserOutlined />}></Avatar>
+                  <Paragraph className="font-size-large p-bottom-1">"It's an immense pleasure to work with such an young team. We see CV Docket significantly
+                  reduce the time and efforts of our recruiters."</Paragraph>
+                  <Text>Mr.Gajendra, CEO, Sybriz Technologies</Text>
+                </Card>
+              </TabPane>
+              <TabPane key="3" tab={<Button type="link"><DeploymentUnitOutlined /> NetworkingKKR Solutions </Button>}>
+                <Card className="client">
+                  <Avatar size={80} icon={<UserOutlined />}></Avatar>
+                  <Paragraph className="font-size-large p-bottom-1">"Kudos to the team, You made our daily life is more easier. We see CV Docket significantly
+                  reduce the time and efforts of our recruiters."</Paragraph>
+                  <Text>Mr.Kiran Reddy, CEO, NetworkingKKR Solutions</Text>
+                </Card>
+              </TabPane>
+              <TabPane key="4" tab={<Button type="link"><FileOutlined /> MyNameIsNG Solutions </Button>}>
+                <Card className="client">
+                  <Avatar size={80} icon={<UserOutlined />}></Avatar>
+                  <Paragraph className="font-size-large p-bottom-1">"It's an immense pleasure to work with such an young team. We see CV Docket significantly
+                  reduce the time and efforts of our recruiters."</Paragraph>
+                  <Text>Mr.Aravind, Head of the Talent Acquisitions, MyNameIsNG Solutions</Text>
+                </Card>
+              </TabPane>
+            </Tabs>
+          </Col>
+        </Row>
         <Row className="p-top-3">
           <Col span={24}>
             <Card title="Our Four Pillers">
