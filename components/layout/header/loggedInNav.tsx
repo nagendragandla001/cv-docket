@@ -9,7 +9,7 @@ import {
 import Container from "../container";
 import { CaretDownFilled, LoginOutlined, MenuOutlined, PlusOutlined, SmileOutlined, UserOutlined } from "@ant-design/icons";
 import Link from "next/link";
-import AddCandidate from "../../Candidate";
+import AddCandidate from "../../authenticated/Candidate/addCandidate";
 
 const { Text, Title } = Typography;
 
