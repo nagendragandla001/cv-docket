@@ -147,7 +147,7 @@ const CandidateCard = (): JSX.Element => {
                                                     <Row>
                                                         <Col span={8} className="text-primary text-semibold">Designation:</Col>
                                                         <Col span={16}>
-                                                            <Text className="text-small text-link">{c.designation}</Text>
+                                                            <Text className="text-small">{c.designation}</Text>
                                                         </Col>
                                                     </Row>
                                                 </Col>
