@@ -31,7 +31,250 @@ const promotors = [
   },
 ];
 
+
+
 const HomeComponent = (): JSX.Element => {
+  const MobileTimelines = (): JSX.Element => (
+    <Timeline mode="left">
+      <Timeline.Item>
+        <Row>
+          <Col span={24}>
+            <Card
+              hoverable={false}
+              bordered={false}
+              cover={
+                <Image
+                  src='/images/files.svg'
+                  alt='spreadsheet'
+                  className="profile-pic"
+                  preview={false}
+                ></Image>
+              }
+            >
+              <Meta
+                title={<Title level={3}>No more manual documents</Title>}
+                description="As a recruiter we understand the pain to manage Candidate information using excel sheets.
+                          Day to day job will become tough to track or filter information. Using our platform job become more easier."></Meta>
+            </Card>
+          </Col>
+        </Row>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Col span={24}>
+          <Card
+            hoverable={false}
+            bordered={false}
+            cover={
+              <Image
+                src='/images/status1.svg'
+                alt='spreadsheet'
+                className="profile-pic"
+                preview={false}
+              ></Image>
+            }
+          >
+            <Meta
+              title={<Title level={3}>Effective feedback system</Title>}
+              description="Still many companies are not liveraging entire interview rounds feedback into 
+                        single platform. The communication used to happen using email chain only. Using our platform We are stacking all interview's feedback 
+                        into a single platform."></Meta>
+          </Card>
+        </Col>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Row>
+          <Col span={24}>
+            <Card
+              hoverable={false}
+              bordered={false}
+              cover={
+                <Image
+                  src='/images/status.svg'
+                  alt='spreadsheet'
+                  className="profile-pic"
+                  preview={false}
+                ></Image>
+              }
+            >
+              <Meta
+                title={<Title level={3}>Asynchronous Communication</Title>}
+                description="Through our platform we can schedule an interview and set remainders to the interviewer.
+                           The interviewer will get notification 5min before scheduling time."></Meta>
+            </Card>
+          </Col>
+        </Row>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Row>
+          <Col span={24}>
+            <Card
+              hoverable={false}
+              bordered={false}
+              cover={
+                <Image
+                  src='/images/hiring.svg'
+                  alt='spreadsheet'
+                  className="profile-pic"
+                  preview={false}
+                ></Image>
+              }
+            >
+              <Meta
+                title={<Title level={3}>High Hiring Chances</Title>}
+                description="It would be easy to take a decisition for manager and
+                          recruiters with above features. The manager will get candidate performace in all rounds 
+                          and based on that decision making would be more effective."></Meta>
+            </Card>
+          </Col>
+        </Row>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Row>
+          <Col span={24}>
+            <Card
+              hoverable={false}
+              bordered={false}
+              cover={
+                <Image
+                  src='/images/calendar_1.svg'
+                  alt='spreadsheet'
+                  className="profile-pic"
+                  preview={false}
+                ></Image>
+              }
+            >
+              <Meta
+                title={<Title level={3}>Digital Scheduling Slots</Title>}
+                description="Slots been allocated to the interviewer through the platform
+                          only. Slots are allocated by the recruiter based on
+                          Interviewer's availability."></Meta>
+            </Card>
+          </Col>
+        </Row>
+      </Timeline.Item>
+    </Timeline>
+  );
+
+  const DesktopTimelines = (): JSX.Element => (
+    <Timeline mode="alternate">
+      <Timeline.Item>
+        <Row>
+          <Col span={24}>
+            <Card
+              hoverable={false}
+              bordered={false}
+              cover={
+                <Image
+                  src='/images/files.svg'
+                  alt='spreadsheet'
+                  className="profile-pic"
+                  preview={false}
+                ></Image>
+              }
+            >
+              <Meta
+                title={<Title level={3}>No more manual documents</Title>}
+                description="As a recruiter we understand the pain to manage Candidate information using excel sheets.
+                          Day to day job will become tough to track or filter information. Using our platform job become more easier."></Meta>
+            </Card>
+          </Col>
+        </Row>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Col span={24}>
+          <Card
+            hoverable={false}
+            bordered={false}
+            cover={
+              <Image
+                src='/images/status1.svg'
+                alt='spreadsheet'
+                className="profile-pic"
+                preview={false}
+              ></Image>
+            }
+          >
+            <Meta
+              title={<Title level={3}>Effective feedback system</Title>}
+              description="Still many companies are not liveraging entire interview rounds feedback into 
+                        single platform. The communication used to happen using email chain only. Using our platform We are stacking all interview's feedback 
+                        into a single platform."></Meta>
+          </Card>
+        </Col>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Row>
+          <Col span={24}>
+            <Card
+              hoverable={false}
+              bordered={false}
+              cover={
+                <Image
+                  src='/images/status.svg'
+                  alt='spreadsheet'
+                  className="profile-pic"
+                  preview={false}
+                ></Image>
+              }
+            >
+              <Meta
+                title={<Title level={3}>Asynchronous Communication</Title>}
+                description="Through our platform we can schedule an interview and set remainders to the interviewer.
+                           The interviewer will get notification 5min before scheduling time."></Meta>
+            </Card>
+          </Col>
+        </Row>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Row>
+          <Col span={24}>
+            <Card
+              hoverable={false}
+              bordered={false}
+              cover={
+                <Image
+                  src='/images/hiring.svg'
+                  alt='spreadsheet'
+                  className="profile-pic"
+                  preview={false}
+                ></Image>
+              }
+            >
+              <Meta
+                title={<Title level={3}>High Hiring Chances</Title>}
+                description="It would be easy to take a decisition for manager and
+                          recruiters with above features. The manager will get candidate performace in all rounds 
+                          and based on that decision making would be more effective."></Meta>
+            </Card>
+          </Col>
+        </Row>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Row>
+          <Col span={24}>
+            <Card
+              hoverable={false}
+              bordered={false}
+              cover={
+                <Image
+                  src='/images/calendar_1.svg'
+                  alt='spreadsheet'
+                  className="profile-pic"
+                  preview={false}
+                ></Image>
+              }
+            >
+              <Meta
+                title={<Title level={3}>Digital Scheduling Slots</Title>}
+                description="Slots been allocated to the interviewer through the platform
+                          only. Slots are allocated by the recruiter based on
+                          Interviewer's availability."></Meta>
+            </Card>
+          </Col>
+        </Row>
+      </Timeline.Item>
+    </Timeline>
+  )
   return (
     <>
       <div className="banner-container">
@@ -52,124 +295,9 @@ const HomeComponent = (): JSX.Element => {
             <Title>Why to choose CV Docket?</Title>
           </Col>
           <Col span={24}>
-            <Timeline mode="alternate">
-              <Timeline.Item>
-                <Row>
-                  <Col span={24}>
-                    <Card
-                      hoverable={false}
-                      bordered={false}
-                      cover={
-                        <Image
-                          src='/images/files.svg'
-                          alt='spreadsheet'
-                          className="profile-pic"
-                          preview={false}
-                        ></Image>
-                      }
-                    >
-                      <Meta
-                        title={<Title level={3}>No more manual documents</Title>}
-                        description="As a recruiter we understand the pain to manage Candidate information using excel sheets.
-                        Day to day job will become tough to track or filter information. Using our platform job become more easier."></Meta>
-                    </Card>
-                  </Col>
-                </Row>
-              </Timeline.Item>
-              <Timeline.Item>
-                <Col span={24}>
-                  <Card
-                    hoverable={false}
-                    bordered={false}
-                    cover={
-                      <Image
-                        src='/images/status1.svg'
-                        alt='spreadsheet'
-                        className="profile-pic"
-                        preview={false}
-                      ></Image>
-                    }
-                  >
-                    <Meta
-                      title={<Title level={3}>Effective feedback system</Title>}
-                      description="Still many companies are not liveraging entire interview rounds feedback into 
-                      single platform. The communication used to happen using email chain only. Using our platform We are stacking all interview's feedback 
-                      into a single platform."></Meta>
-                  </Card>
-                </Col>
-              </Timeline.Item>
-              <Timeline.Item>
-                <Row>
-                  <Col span={24}>
-                    <Card
-                      hoverable={false}
-                      bordered={false}
-                      cover={
-                        <Image
-                          src='/images/status.svg'
-                          alt='spreadsheet'
-                          className="profile-pic"
-                          preview={false}
-                        ></Image>
-                      }
-                    >
-                      <Meta
-                        title={<Title level={3}>Asynchronous Communication</Title>}
-                        description="Through our platform we can schedule an interview and set remainders to the interviewer.
-                         The interviewer will get notification 5min before scheduling time."></Meta>
-                    </Card>
-                  </Col>
-                </Row>
-              </Timeline.Item>
-              <Timeline.Item>
-                <Row>
-                  <Col span={24}>
-                    <Card
-                      hoverable={false}
-                      bordered={false}
-                      cover={
-                        <Image
-                          src='/images/hiring.svg'
-                          alt='spreadsheet'
-                          className="profile-pic"
-                          preview={false}
-                        ></Image>
-                      }
-                    >
-                      <Meta
-                        title={<Title level={3}>High Hiring Chances</Title>}
-                        description="It would be easy to take a decisition for manager and
-                        recruiters with above features. The manager will get candidate performace in all rounds 
-                        and based on that decision making would be more effective."></Meta>
-                    </Card>
-                  </Col>
-                </Row>
-              </Timeline.Item>
-              <Timeline.Item>
-                <Row>
-                  <Col span={24}>
-                    <Card
-                      hoverable={false}
-                      bordered={false}
-                      cover={
-                        <Image
-                          src='/images/calendar_1.svg'
-                          alt='spreadsheet'
-                          className="profile-pic"
-                          preview={false}
-                        ></Image>
-                      }
-                    >
-                      <Meta
-                        title={<Title level={3}>Digital Scheduling Slots</Title>}
-                        description="Slots been allocated to the interviewer through the platform
-                        only. Slots are allocated by the recruiter based on
-                        Interviewer's availability."></Meta>
-                    </Card>
-                  </Col>
-                </Row>
-              </Timeline.Item>
-            </Timeline>
+            {
+              isMobile ? <MobileTimelines /> : <DesktopTimelines />
+            }
           </Col>
         </Row>
         <Row>
