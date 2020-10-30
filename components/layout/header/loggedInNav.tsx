@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import {
-    Button,
-    Col,
-    Row,
-    Space,
-    Typography,
+    Button, Col, Row, Space, Typography, Image
 } from "antd";
 import Container from "../container";
 import { CaretDownFilled, LoginOutlined, MenuOutlined, PlusOutlined, SmileOutlined, UserOutlined } from "@ant-design/icons";
@@ -23,7 +19,9 @@ const LoggedInNav = (): JSX.Element => {
                 <Row align="middle" justify="space-between">
                     <Col>
                         <Space>
-                            <Link href="/"><Title level={3} className="text-primary text-bold">CV DOCKET</Title></Link>
+                            <Link href="/">
+                                <Button type="link" icon={<Image src="/images/logo.png" className="logo" preview={false} alt="Logo" />} />
+                            </Link>
                         </Space>
                     </Col>
                     <Col>
