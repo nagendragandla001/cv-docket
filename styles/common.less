@@ -9,10 +9,10 @@
   font-weight: 600;
 }
 .text-primary {
-  color: @charcoal-10 !important;
+  color: @blue-8 !important;
 }
 .text-disabled {
-  color: @charcoal-6 !important;
+  color: @blue-6 !important;
 }
 .text-center {
   text-align: center;
@@ -70,4 +70,39 @@
 
 .text-link {
   color: @cyan-8;
+}
+
+.m-b-1 {
+  margin-bottom: 1em;
+}
+.m-t-1 {
+  margin-top: 1em;
+}
+.m-t-2 {
+  margin-top: 2em;
+}
+
+// AboutUS Styles Need to replace to component
+
+.about-us {
+  & .card {
+    background: #ffffff;
+    box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+
+    & .ant-card-body {
+      padding: 16px;
+    }
+
+    & .ant-avatar {
+      height: 64px;
+      width: 64px;
+      line-height: 64px;
+    }
+  }
+  & .profile-pic {
+    & img {
+      padding: 0px;
+    }
+  }
 }

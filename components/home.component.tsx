@@ -8,30 +8,6 @@ const { Title, Text, Paragraph } = Typography;
 const { Meta } = Card;
 const { TabPane } = Tabs;
 
-const promotors = [
-  {
-    key: "lakshmi",
-    name: "Lakshmi K",
-    description: "Founder & CEO",
-  },
-  {
-    key: "siva",
-    name: "Siva Reddy A",
-    description: "Co-Founder",
-  },
-  {
-    key: "nagendra",
-    name: "Nagendra Gandla",
-    description: "CTO",
-  },
-  {
-    key: "niranjan",
-    name: "Niranjan Singh",
-    description: "Technical Architect",
-  },
-];
-
-
 
 const HomeComponent = (): JSX.Element => {
   const MobileTimelines = (): JSX.Element => (
@@ -301,7 +277,7 @@ const HomeComponent = (): JSX.Element => {
           </Col>
         </Row>
         <Row>
-          <Col span={24} className="text-center m-top-1">
+          <Col span={24} className="text-center m-top-1 m-bottom-1">
             <Title level={2} className="m-bottom-1">What Our Clients Say</Title>
             <Tabs defaultActiveKey="2" centered type="card">
               <TabPane key="2" tab={<Button type="link"><GlobalOutlined /> Sybriz Technologies </Button>}>
@@ -329,37 +305,6 @@ const HomeComponent = (): JSX.Element => {
                 </Card>
               </TabPane>
             </Tabs>
-          </Col>
-        </Row>
-        <Row className="p-top-3">
-          <Col span={24}>
-            <Card title="Our Four Pillers">
-              <Row gutter={24}>
-                {promotors.map((p) => (
-                  <Col
-                    xs={{ span: 24 }}
-                    lg={{ span: 6 }}
-                    key={p.key}
-                    className="m-top-1"
-                  >
-                    <Card
-                      hoverable={false}
-                      cover={
-                        <Image
-                          src={`/images/${p.key}.jpeg`}
-                          alt={p.key}
-                          className="profile-pic"
-                          preview={false}
-
-                        ></Image>
-                      }
-                    >
-                      <Meta title={p.name} description={p.description}></Meta>
-                    </Card>
-                  </Col>
-                ))}
-              </Row>
-            </Card>
           </Col>
         </Row>
       </Container>
