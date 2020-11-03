@@ -280,7 +280,7 @@ const HomeComponent = (): JSX.Element => {
           <Col span={24} className="text-center m-top-1 m-bottom-1">
             <Title level={2} className="m-bottom-1">What Our Clients Say</Title>
             <Tabs defaultActiveKey="2" centered type="card">
-              <TabPane key="2" tab={<Button type="link"><GlobalOutlined /> Sybriz Technologies </Button>}>
+              <TabPane key="2" tab={<Button type="link"><GlobalOutlined /> Cyberbiz Technologies </Button>}>
                 <Card className="client">
                   <Avatar style={{ marginBottom: '0.5em' }} size={80} icon={<UserOutlined />}></Avatar>
                   <Paragraph className="font-size-large p-bottom-1">"It's an immense pleasure to work with such an young team. We see CV Docket significantly
