@@ -45,35 +45,6 @@ const RecruiterFilter = (): JSX.Element => {
                         <Option value="operations">Operations Head</Option>
                     </Select>
                 </Col>
-                <Col span={24}>
-                    <Paragraph className="text-bold text-primary m-bottom-1">Filter by Stage: </Paragraph>
-                    <Radio.Group className="stages">
-                        <Radio.Button value="applied">
-                            <Row>
-                                <Col span={24}>Applied</Col>
-                                <Col span={24} className="text-large">100</Col>
-                            </Row>
-                        </Radio.Button>
-                        <Radio.Button value="shortlisted">
-                            <Row>
-                                <Col span={24}>Shortlisted</Col>
-                                <Col span={24} className="text-large">70</Col>
-                            </Row>
-                        </Radio.Button>
-                        <Radio.Button value="interview">
-                            <Row>
-                                <Col span={24}>Interview</Col>
-                                <Col span={24} className="text-large">60</Col>
-                            </Row>
-                        </Radio.Button>
-                        <Radio.Button value="selected">
-                            <Row>
-                                <Col span={24}>Selected</Col>
-                                <Col span={24} className="text-large">40</Col>
-                            </Row>
-                        </Radio.Button>
-                    </Radio.Group>
-                </Col>
                 <Col span={24}><Checkbox value="interviewer">Interviewer</Checkbox></Col>
                 <Col span={24}>
                     <Checkbox value="reschedule">Reschedule</Checkbox>

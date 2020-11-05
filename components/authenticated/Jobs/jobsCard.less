@@ -1,0 +1,51 @@
+.jobs-container {
+  & .jobs-card {
+    &.ant-card-bordered {
+      border: 1px solid @charcoal-4;
+      border-radius: 4px;
+    }
+    & .ant-card-head {
+      padding: 0 16px;
+    }
+    & .ant-card-body {
+      padding: 16px;
+    }
+    & .ant-card-actions {
+      & li {
+        margin: 4px 0 !important;
+      }
+    }
+
+    & .card-extra {
+      font-size: 12px;
+      font-weight: 600;
+      &.FR {
+        background: rgb(211, 211, 48);
+      }
+      & .SR {
+        background: orange;
+      }
+      & .TR {
+        background: lightblue;
+      }
+      & .SL {
+        background: lightgreen;
+      }
+      & .RJ {
+        background: rgba(255, 0, 0, 0.589);
+      }
+      & .SC {
+        background: #eeeeee;
+      }
+    }
+  }
+
+  & .stats {
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 2px 0px 0px rgba(91, 120, 124, 0.16);
+    & .count {
+      font-size: 2em;
+    }
+  }
+}

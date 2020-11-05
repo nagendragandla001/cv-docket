@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Button, Col, Row, Space, Typography, Image
 } from "antd";
@@ -9,9 +9,15 @@ import AddCandidate from "../../authenticated/Candidate/addCandidate";
 
 const { Text, Title } = Typography;
 
-const LoggedInNav = (): JSX.Element => {
+type PageModel = {
+    page: string
+}
+
+const LoggedInNav = (props: PageModel): JSX.Element => {
+    const { page } = props;
 
     const [visible, setVisible] = useState(false);
+
 
     return (
         <nav>
@@ -27,10 +33,12 @@ const LoggedInNav = (): JSX.Element => {
                     <Col>
                         <Space>
                             <Button
-                                type="primary"
-                                icon={<PlusOutlined />}
+                                type="default"
+                            >Add a Job</Button>
+                            <Button
+                                type="default"
                                 onClick={(): void => setVisible(true)}
-                            >Add Candidate</Button>
+                            >Add a Candidate</Button>
                         </Space>
                     </Col>
                 </Row>

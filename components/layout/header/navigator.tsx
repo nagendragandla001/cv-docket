@@ -13,11 +13,12 @@ const Navigator = (): JSX.Element => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    setLoggedIn(router.asPath.startsWith('/user'));
+    console.log(router);
+    setLoggedIn(router.asPath.startsWith('/interviews') || router.asPath.startsWith('/jobs'));
   }, [router]);
 
   return (
-    loggedIn ? <LoggedInNav /> : <PublicNav />
+    loggedIn ? <LoggedInNav page={router.route} /> : <PublicNav />
   );
 };
 

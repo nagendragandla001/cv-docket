@@ -77,22 +77,6 @@ const candidates = [
 
     },
     {
-        name: 'Yuvaraj Singh',
-        status: 'SC',
-        id: 'c5',
-        job: {
-            id: 'j5',
-            name: 'DevOps Engineer'
-        },
-        contact: '5555555555',
-        email: 'yuvaraj@gmail.com',
-        experience: '4 years',
-        interviewer: 'Niranjan Singh',
-        scheduledTime: '01 Nov 2020 10:30AM',
-        designation: 'Associate Devops Engineer'
-
-    },
-    {
         name: 'Harthik Pandya',
         status: 'SL',
         id: 'c6',
@@ -135,10 +119,18 @@ const CandidateCard = (): JSX.Element => {
                     <Col span={24} key={c.id}>
                         <Card
                             className="candidate-card"
-                            title={c.name}
-                            extra={<Text className={c.status}>{StatusLabel[c.status]}</Text>}
                         >
-                            <Row>
+                            <Row gutter={[16, 16]}>
+                                <Col span={24}>
+                                    <Row justify="space-between">
+                                        <Col>
+                                            <Text className="text-bold">{c.name}</Text>
+                                        </Col>
+                                        <Col>
+                                            <Text className={`card-extra ${c.status}`}>{StatusLabel[c.status]}</Text>
+                                        </Col>
+                                    </Row>
+                                </Col>
                                 <Col span={24}>
                                     <Row>
                                         <Col span={12}>

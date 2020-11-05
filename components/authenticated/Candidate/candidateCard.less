@@ -1,5 +1,9 @@
 .candidate-container {
   & .candidate-card {
+    &.ant-card-bordered {
+      border: 1px solid @charcoal-4;
+      border-radius: 4px;
+    }
     & .ant-card-head {
       padding: 0 16px;
     }
@@ -7,30 +11,29 @@
       padding: 16px;
     }
 
-    & .ant-card-extra {
+    & .card-extra {
       font-size: 12px;
       font-weight: 600;
-      span {
-        padding: 4px;
-        border-radius: 4px;
+      padding: 4px;
+      border-radius: 4px;
+
+      &.FR {
+        background: rgb(211, 211, 48) !important;
       }
-      & .FR {
-        background: rgb(211, 211, 48);
+      &.SR {
+        background: orange !important;
       }
-      & .SR {
-        background: orange;
+      &.TR {
+        background: lightblue !important;
       }
-      & .TR {
-        background: lightblue;
+      &.SL {
+        background: lightgreen !important;
       }
-      & .SL {
-        background: lightgreen;
+      &.RJ {
+        background: rgba(255, 0, 0, 0.589) !important;
       }
-      & .RJ {
-        background: rgba(255, 0, 0, 0.589);
-      }
-      & .SC {
-        background: #eeeeee;
+      &.SC {
+        background: #eeeeee !important;
       }
     }
   }

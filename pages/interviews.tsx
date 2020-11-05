@@ -2,13 +2,13 @@ import { SmileOutlined } from '@ant-design/icons';
 import { Button, Card, Col, Result, Row, Input, Pagination } from 'antd';
 import Link from 'next/link';
 import React from 'react';
-import CandidateCard from '../../components/authenticated/Candidate/candidateCard';
-import RecruiterFilter from '../../components/filters/recruiterFilter';
-import Container from '../../components/layout/container';
+import CandidateCard from '../components/authenticated/Candidate/candidateCard';
+import RecruiterFilter from '../components/filters/recruiterFilter';
+import Container from '../components/layout/container';
 
 const { Search } = Input;
 
-const UserHome = () => {
+const Interviews = () => {
     return (
         <Container>
             <Row gutter={[16, 16]} className="m-top-1">
@@ -37,4 +37,4 @@ const UserHome = () => {
     )
 }
 
-export default UserHome;
+export default Interviews;
