@@ -71,7 +71,7 @@ const AddCandidate = (props: PropsModel) => {
                         </Form.Item>
                     </Col>
                 </Row>
-                <Row gutter={16}>
+                <Row>
                     <Col xs={{ span: 24 }} lg={{ span: 24 }}>
                         <Form.Item
                             name="email"
@@ -143,7 +143,7 @@ const AddCandidate = (props: PropsModel) => {
                         </Form.Item>
                     </Col>
                 </Row>
-                <Row gutter={16}>
+                <Row>
                     <Col span={24}>
                         <Form.Item name="schedule" label="Schedule Time">
                             <RangePicker
@@ -155,7 +155,7 @@ const AddCandidate = (props: PropsModel) => {
                         </Form.Item>
                     </Col>
                 </Row>
-                <Row gutter={16}>
+                <Row>
                     <Col span={24}>
                         <Form.Item name="resume">
                             <Upload {...uploadProps}>
