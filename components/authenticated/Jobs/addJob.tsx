@@ -38,7 +38,7 @@ const AddJob = (): JSX.Element => {
                                 roles: [""]
                             }}
                         >
-                            <Row gutter={[12, 12]}>
+                            <Row>
                                 <Col span={24}>
                                     <Form.Item
                                         name="title"
@@ -88,7 +88,7 @@ const AddJob = (): JSX.Element => {
                                     </Form.Item>
                                 </Col>
                             </Row>
-                            <Row gutter={[12, 12]}>
+                            <Row gutter={[0, 8]}>
                                 <Col span={24}><Text>Roles and Responsibilities</Text></Col>
                                 <Col span={24}>
                                     <Form.List
