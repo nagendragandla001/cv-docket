@@ -1,8 +1,9 @@
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-import { Button, Col, Drawer, Form, Input, Row, Typography } from 'antd';
+import { Button, Col, Drawer, Form, Input, Row, Select, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 
 const { Text } = Typography;
+const { Option } = Select;
 
 const AddJob = (): JSX.Element => {
     const [form] = Form.useForm();
@@ -10,6 +11,9 @@ const AddJob = (): JSX.Element => {
     const onCancel = () => {
         setVisible(false);
     }
+
+    const expYears = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
     return (
         <>
             <Button type="default" onClick={(): void => setVisible(true)}>Add Job</Button>
@@ -51,6 +55,37 @@ const AddJob = (): JSX.Element => {
                                         rules={[{ required: true, message: 'Enter Job Location' }]}
                                     >
                                         <Input placeholder="Job Location" />
+                                    </Form.Item>
+                                </Col>
+                                <Col span={24}>
+                                    <Form.Item
+                                        name="experience"
+                                        label="Experience Criteria"
+                                        rules={[{ required: true, message: 'Enter Experience Criteria' }]}
+                                    >
+                                        <Input.Group compact>
+                                            <Select
+                                                placeholder="Minimum Years"
+                                                options={expYears.map(yr => ({ value: yr, label: `${yr} years` }))}
+                                                style={{ width: '30%' }}>
+                                            </Select>
+                                            <Input
+                                                style={{
+                                                    width: '10%',
+                                                    borderLeft: 0,
+                                                    borderRight: 0,
+                                                    pointerEvents: 'none',
+                                                    textAlign: 'center'
+                                                }}
+                                                placeholder="~"
+                                                disabled
+                                            ></Input>
+                                            <Select
+                                                placeholder="Maximum Years"
+                                                options={expYears.map(yr => ({ value: yr, label: `${yr} years` }))}
+                                                style={{ width: '30%' }}>
+                                            </Select>
+                                        </Input.Group>
                                     </Form.Item>
                                 </Col>
                             </Row>

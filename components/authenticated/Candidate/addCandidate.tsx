@@ -81,6 +81,15 @@ const AddCandidate = (props: PropsModel) => {
                             <Input placeholder="Enter Email" />
                         </Form.Item>
                     </Col>
+                    <Col xs={{ span: 24 }} lg={{ span: 24 }}>
+                        <Form.Item
+                            name="experience"
+                            label="Experience"
+                            rules={[{ required: true, message: 'Enter Experience' }]}
+                        >
+                            <Input placeholder="Enter Experience" />
+                        </Form.Item>
+                    </Col>
                 </Row>
                 <Row gutter={16}>
                     <Col xs={{ span: 24 }} lg={{ span: 12 }}>
