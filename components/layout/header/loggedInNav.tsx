@@ -6,6 +6,7 @@ import Container from "../container";
 import { CaretDownFilled, LoginOutlined, MenuOutlined, PlusOutlined, SmileOutlined, UserOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import AddCandidate from "../../authenticated/Candidate/addCandidate";
+import AddJob from "../../authenticated/Jobs/addJob";
 
 const { Text, Title } = Typography;
 
@@ -32,9 +33,7 @@ const LoggedInNav = (props: PageModel): JSX.Element => {
                     </Col>
                     <Col>
                         <Space>
-                            <Button
-                                type="default"
-                            >Add a Job</Button>
+                            <AddJob />
                             <Button
                                 type="default"
                                 onClick={(): void => setVisible(true)}
