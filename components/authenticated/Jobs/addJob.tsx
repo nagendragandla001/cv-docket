@@ -25,7 +25,7 @@ const AddJob = (): JSX.Element => {
                         title="Add a Job"
                         footer={null}
                         onClose={onCancel}
-                        width='auto'
+                        width='40em'
                         maskClosable={false}
                         destroyOnClose={true}
                         forceRender
@@ -63,29 +63,17 @@ const AddJob = (): JSX.Element => {
                                         label="Experience Criteria"
                                         rules={[{ required: true, message: 'Enter Experience Criteria' }]}
                                     >
-                                        <Input.Group compact>
-                                            <Select
-                                                placeholder="Minimum Years"
-                                                options={expYears.map(yr => ({ value: yr, label: `${yr} years` }))}
-                                                style={{ width: '30%' }}>
-                                            </Select>
-                                            <Input
-                                                style={{
-                                                    width: '10%',
-                                                    borderLeft: 0,
-                                                    borderRight: 0,
-                                                    pointerEvents: 'none',
-                                                    textAlign: 'center'
-                                                }}
-                                                placeholder="~"
-                                                disabled
-                                            ></Input>
-                                            <Select
-                                                placeholder="Maximum Years"
-                                                options={expYears.map(yr => ({ value: yr, label: `${yr} years` }))}
-                                                style={{ width: '30%' }}>
-                                            </Select>
-                                        </Input.Group>
+                                        <Select
+                                            placeholder="Minimum Years"
+                                            options={expYears.map(yr => ({ value: yr, label: `${yr} years` }))}
+                                            style={{ width: '200px' }}>
+                                        </Select>
+                                        <Text style={{ padding: '0 1em' }}>To</Text>
+                                        <Select
+                                            placeholder="Maximum Years"
+                                            options={expYears.map(yr => ({ value: yr, label: `${yr} years` }))}
+                                            style={{ width: '200px' }}>
+                                        </Select>
                                     </Form.Item>
                                 </Col>
                             </Row>
