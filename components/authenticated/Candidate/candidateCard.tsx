@@ -1,7 +1,7 @@
-import { FilePdfOutlined, FileWordOutlined, MailOutlined, PhoneOutlined, ShareAltOutlined } from '@ant-design/icons';
+import { EyeOutlined, FilePdfOutlined, FileWordOutlined, MailOutlined, PhoneOutlined, ShareAltOutlined } from '@ant-design/icons';
 import { Button, Card, Col, Row, Space, Steps, Typography } from 'antd';
-import { getRedirectStatus } from 'next/dist/lib/load-custom-routes';
-import React from 'react';
+import React, { useState } from 'react';
+import Feedback from '../../feedback';
 import './candidateCard.less';
 
 const { Text } = Typography;
@@ -17,7 +17,7 @@ const StatusLabel = {
 const candidates = [
     {
         name: 'MS Dhoni',
-        status: 'selected',
+        status: 'completed',
         round: 'FR',
         id: 'c1',
         job: {
@@ -29,7 +29,88 @@ const candidates = [
         experience: '8 years',
         interviewer: 'Niranjan Singh',
         scheduledTime: '01 Nov 2020 10:30AM',
-        designation: 'Junior Engineer'
+        designation: 'Junior Engineer',
+        feedback: [
+            {
+                round: 'FR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            }
+
+        ]
     },
     {
         name: 'Virat Kohli',
@@ -45,7 +126,88 @@ const candidates = [
         experience: '8 years',
         interviewer: 'Niranjan Singh',
         scheduledTime: '01 Nov 2020 10:30AM',
-        designation: 'Software Engineer'
+        designation: 'Software Engineer',
+        feedback: [
+            {
+                round: 'FR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            }
+
+        ]
     },
     {
         name: 'Suresh Raina',
@@ -61,7 +223,8 @@ const candidates = [
         experience: '10.6 years',
         interviewer: 'Niranjan Singh',
         scheduledTime: '01 Nov 2020 10:30AM',
-        designation: 'SDE-II'
+        designation: 'SDE-II',
+        feedback: []
     },
     {
         name: 'Sikhar Dhavan',
@@ -77,12 +240,249 @@ const candidates = [
         experience: '11 years',
         interviewer: 'Niranjan Singh',
         scheduledTime: '01 Nov 2020 10:30AM',
-        designation: 'Senior Software Engineer'
+        designation: 'Senior Software Engineer',
+        feedback: [
+            {
+                round: 'FR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            },
+            {
+                round: 'SR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            },
+            {
+                round: 'TR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            }
+
+        ]
 
     },
     {
         name: 'Harthik Pandya',
-        status: 'selected',
+        status: 'completed',
         round: 'SR',
         id: 'c6',
         job: {
@@ -94,8 +494,165 @@ const candidates = [
         experience: '8.6 years',
         interviewer: 'Niranjan Singh',
         scheduledTime: '01 Nov 2020 10:30AM',
-        designation: 'Team Lead'
-
+        designation: 'Team Lead',
+        feedback: [
+            {
+                round: 'FR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            },
+            {
+                round: 'SR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            }
+        ]
     },
     {
         name: 'David Warner',
@@ -111,7 +668,322 @@ const candidates = [
         experience: '3.8 years',
         interviewer: 'Niranjan Singh',
         scheduledTime: '01 Nov 2020 10:30AM',
-        designation: 'Marketing Lead'
+        designation: 'Marketing Lead',
+        feedback: [
+            {
+                round: 'FR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            },
+            {
+                round: 'SR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            },
+            {
+                round: 'TR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            },
+            {
+                round: 'MR',
+                proposedStatus: 'completed',
+                skills: [
+                    {
+                        skill: 'HTML5',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Semantic Elements',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What kind of Web Storages do we have?',
+                                answer: 'Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'CSS3',
+                        rating: 4,
+                        questions: [
+                            {
+                                question: 'What is Preprocessors',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What are Position Properties?',
+                                answer: 'Got Proficient Answer'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: 'Need to improve css styles'
+                    },
+                    {
+                        skill: 'Javascript',
+                        rating: 5,
+                        questions: [
+                            {
+                                question: 'What are Data Types',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Arrow Functions?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'How to handle Asynchronous Events?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: '',
+                        suggestions: ''
+                    },
+                    {
+                        skill: 'Angular',
+                        rating: 3,
+                        questions: [
+                            {
+                                question: 'What is Single Page Application?',
+                                answer: 'Answered Well'
+                            },
+                            {
+                                question: 'What is Observable and Subject?',
+                                answer: 'Proficient Answer'
+                            },
+                            {
+                                question: 'Tree Shaking in Angular?',
+                                answer: 'Answered Well'
+                            }
+                        ],
+                        comments: 'Good in Angular',
+                        suggestions: 'No Suggestions Required'
+                    }
+                ]
+            }
+
+        ]
     },
 
 ];
@@ -148,12 +1020,15 @@ const mappedSteps = {
 
 const CandidateCard = (): JSX.Element => {
 
+    const [visibleFeedback, setVisibleFeedback] = useState(false);
+    const [currentFeedback, setCurrentFeedback] = useState([]);
+
     const getCurrentStep = (id) => {
         return mappedSteps[id]
     }
 
     const getRedirectStatus = (status) => {
-        if (status === 'selected') {
+        if (status === 'completed') {
             return 'finish'
         } else if (status === 'rejected') {
             return 'error';
@@ -161,6 +1036,11 @@ const CandidateCard = (): JSX.Element => {
             return 'wait';
         }
         return 'process';
+    }
+
+    const onFeedback = (feedback) => {
+        setCurrentFeedback(feedback);
+        setVisibleFeedback(true);
     }
 
     return (
@@ -171,7 +1051,31 @@ const CandidateCard = (): JSX.Element => {
                         <Card
                             className="candidate-card"
                             actions={[
-                                <Row justify="end" key={Math.random()}>
+                                <Row justify="space-between" key={Math.random()} style={{ cursor: 'default' }}>
+                                    <Col>
+                                        {
+                                            c.feedback && c.feedback.length > 0 ? (
+                                                <>
+                                                    <Button
+                                                        type="link"
+                                                        className="p-all-0"
+                                                        icon={<EyeOutlined />}
+                                                        onClick={(): void => onFeedback(c.feedback)}
+                                                    >Feedback
+                                                    </Button>
+                                                    {
+                                                        visibleFeedback && (
+                                                            <Feedback
+                                                                feedback={currentFeedback}
+                                                                visible={visibleFeedback}
+                                                                onClose={(): void => setVisibleFeedback(false)}
+                                                            />
+                                                        )
+                                                    }
+                                                </>
+                                            ) : null
+                                        }
+                                    </Col>
                                     <Col>
                                         <Space>
                                             <Button type="default" size="small" icon={<FileWordOutlined />}>View Resume</Button>
