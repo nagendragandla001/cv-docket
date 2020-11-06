@@ -1,23 +1,24 @@
 import { FilePdfOutlined, FileWordOutlined, MailOutlined, PhoneOutlined, ShareAltOutlined } from '@ant-design/icons';
-import { Button, Card, Col, Row, Space, Typography } from 'antd';
+import { Button, Card, Col, Row, Space, Steps, Typography } from 'antd';
+import { getRedirectStatus } from 'next/dist/lib/load-custom-routes';
 import React from 'react';
 import './candidateCard.less';
 
 const { Text } = Typography;
+const { Step } = Steps;
 
 const StatusLabel = {
     FR: 'First Round',
     SR: 'Second Round',
     TR: 'Third Round',
-    SL: 'Selected',
-    RJ: 'Rejected',
-    SC: 'Scheduled'
+    MR: 'Manager Round'
 }
 
 const candidates = [
     {
         name: 'MS Dhoni',
-        status: 'FR',
+        status: 'selected',
+        round: 'FR',
         id: 'c1',
         job: {
             id: 'j1',
@@ -32,7 +33,8 @@ const candidates = [
     },
     {
         name: 'Virat Kohli',
-        status: 'SR',
+        status: 'inprogress',
+        round: 'SR',
         id: 'c2',
         job: {
             id: 'j2',
@@ -47,7 +49,8 @@ const candidates = [
     },
     {
         name: 'Suresh Raina',
-        status: 'FR',
+        status: 'inprogress',
+        round: 'FR',
         id: 'c3',
         job: {
             id: 'j3',
@@ -62,7 +65,8 @@ const candidates = [
     },
     {
         name: 'Sikhar Dhavan',
-        status: 'TR',
+        status: 'rejected',
+        round: 'TR',
         id: 'c4',
         job: {
             id: 'j4',
@@ -78,7 +82,8 @@ const candidates = [
     },
     {
         name: 'Harthik Pandya',
-        status: 'SL',
+        status: 'selected',
+        round: 'SR',
         id: 'c6',
         job: {
             id: 'j6',
@@ -94,7 +99,8 @@ const candidates = [
     },
     {
         name: 'David Warner',
-        status: 'RJ',
+        status: 'rejected',
+        round: 'MR',
         id: 'c7',
         job: {
             id: 'j7',
@@ -108,9 +114,54 @@ const candidates = [
         designation: 'Marketing Lead'
     },
 
+];
+
+const steps = [
+    {
+        title: 'First Round',
+        value: 1,
+        key: 'FR'
+    },
+    {
+        title: 'Second Round',
+        value: 2,
+        key: 'SR'
+    },
+    {
+        title: 'Third Round',
+        value: 3,
+        key: 'TR'
+    },
+    {
+        title: 'Manager Round',
+        value: 4,
+        key: 'MR'
+    }
 ]
 
+const mappedSteps = {
+    FR: 0,
+    SR: 1,
+    TR: 2,
+    MR: 3
+}
+
 const CandidateCard = (): JSX.Element => {
+
+    const getCurrentStep = (id) => {
+        return mappedSteps[id]
+    }
+
+    const getRedirectStatus = (status) => {
+        if (status === 'selected') {
+            return 'finish'
+        } else if (status === 'rejected') {
+            return 'error';
+        } else if (status === 'onhold') {
+            return 'wait';
+        }
+        return 'process';
+    }
 
     return (
         <Row gutter={[16, 16]} className="candidate-container">
@@ -119,6 +170,17 @@ const CandidateCard = (): JSX.Element => {
                     <Col span={24} key={c.id}>
                         <Card
                             className="candidate-card"
+                            actions={[
+                                <Row justify="end" key={Math.random()}>
+                                    <Col>
+                                        <Space>
+                                            <Button type="default" size="small" icon={<FileWordOutlined />}>View Resume</Button>
+                                            <Button type="default" size="small" icon={<FilePdfOutlined />}>Download</Button>
+                                            <Button type="default" size="small" icon={<ShareAltOutlined />}>Share</Button>
+                                        </Space>
+                                    </Col>
+                                </Row>
+                            ]}
                         >
                             <Row gutter={[16, 16]}>
                                 <Col span={24}>
@@ -127,7 +189,7 @@ const CandidateCard = (): JSX.Element => {
                                             <Text className="text-bold">{c.name}</Text>
                                         </Col>
                                         <Col>
-                                            <Text className={`card-extra ${c.status}`}>{StatusLabel[c.status]}</Text>
+                                            <Text className={`card-extra ${c.round}`}>{StatusLabel[c.round]}</Text>
                                         </Col>
                                     </Row>
                                 </Col>
@@ -199,12 +261,22 @@ const CandidateCard = (): JSX.Element => {
                                         </Col>
                                     </Row>
                                 </Col>
-                                <Col span={24} className="text-right">
-                                    <Space>
-                                        <Button type="default" size="small" icon={<FileWordOutlined />}>View Resume</Button>
-                                        <Button type="default" size="small" icon={<FilePdfOutlined />}>Download</Button>
-                                        <Button type="default" size="small" icon={<ShareAltOutlined />}>Share</Button>
-                                    </Space>
+                                <Col span={24}>
+                                    <Steps
+                                        size="small"
+                                        current={mappedSteps[c.round]}
+                                        status={getRedirectStatus(c.status)}
+                                    >
+                                        {
+                                            steps.map(step => (
+                                                <Step
+                                                    key={step.value}
+                                                    title={step.title}
+                                                    description={c.round === step.key ? c.status : ''}
+                                                ></Step>
+                                            ))
+                                        }
+                                    </Steps>
                                 </Col>
                             </Row>
                         </Card>
