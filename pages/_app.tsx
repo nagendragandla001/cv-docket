@@ -4,7 +4,8 @@ import { Layout } from "antd";
 import PublicFooter from "../components/footer.component";
 import Navigator from "../components/layout/header/navigator";
 import Head from "next/head";
-import { FileImageFilled } from "@ant-design/icons";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const { Header, Content, Footer } = Layout;
 
@@ -20,6 +21,15 @@ const DefaultHead: React.FunctionComponent = () => {
 }
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    console.log(router);
+    const authPages = ['/interviews', '/jobs', '/dashboard'];
+    setLoggedIn(authPages.includes(router.pathname));
+  }, [router]);
+
   return (
     <Layout>
       <DefaultHead />
@@ -29,9 +39,13 @@ function MyApp({ Component, pageProps }) {
       <Content className="layout-content">
         <Component {...pageProps} />
       </Content>
-      <Footer className="layout-footer">
-        <PublicFooter />
-      </Footer>
+      {
+        !loggedIn && (
+          <Footer className="layout-footer">
+            <PublicFooter />
+          </Footer>
+        )
+      }
     </Layout>
   );
 }

@@ -14,7 +14,8 @@ const Navigator = (): JSX.Element => {
 
   useEffect(() => {
     console.log(router);
-    setLoggedIn(router.asPath.startsWith('/interviews') || router.asPath.startsWith('/jobs'));
+    const authPages = ['/interviews', '/jobs', '/dashboard'];
+    setLoggedIn(authPages.includes(router.pathname));
   }, [router]);
 
   return (

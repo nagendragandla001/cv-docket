@@ -44,6 +44,12 @@ const RoutesConstants = [
         pattern: 'jobs',
         page: 'jobs',
         type: 'private'
+    },
+    {
+        name: 'Dashboard',
+        pattern: 'dashboard',
+        page: 'dashboard',
+        type: 'private'
     }
 ];
 

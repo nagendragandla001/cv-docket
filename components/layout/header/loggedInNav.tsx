@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-    Button, Col, Row, Space, Typography, Image
+    Button, Col, Row, Space, Typography, Image, Avatar
 } from "antd";
 import Container from "../container";
 import { CaretDownFilled, LoginOutlined, MenuOutlined, PlusOutlined, SmileOutlined, UserOutlined } from "@ant-design/icons";
@@ -38,6 +38,8 @@ const LoggedInNav = (props: PageModel): JSX.Element => {
                                 type="default"
                                 onClick={(): void => setVisible(true)}
                             >Add a Candidate</Button>
+                            <Text className="text-laage text-bold">Nagendra Gandla</Text>
+                            <Avatar style={{ background: '#2e6360', color: '#ffffff' }}>NG</Avatar>
                         </Space>
                     </Col>
                 </Row>
