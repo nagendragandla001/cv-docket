@@ -1,4 +1,4 @@
-import { AreaChartOutlined, BarChartOutlined, HeartFilled, HeartOutlined, LineChartOutlined, PieChartOutlined, RadarChartOutlined } from '@ant-design/icons';
+import { AreaChartOutlined, BarChartOutlined, BookOutlined, ExpandAltOutlined, HeartFilled, HeartOutlined, LineChartOutlined, PieChartOutlined, RadarChartOutlined, ScheduleOutlined } from '@ant-design/icons';
 import { Card, Col, Row, Skeleton, Space, Table, Typography } from 'antd';
 import React from 'react';
 import Container from '../../layout/container';
@@ -225,7 +225,10 @@ const DashboardComponent = () => {
                         dataSource={jobsData}
                         pagination={false}
                         size="small"
-                        title={() => <Title level={4} className="text-disabled text-medium text-bold">All Jobs</Title>}
+                        title={() => <Space>
+                            <BookOutlined className="text-disabled" />
+                            <Text className="text-disabled text-medium text-bold"> All Jobs</Text>
+                        </Space>}
                         scroll={{ x: '100%', y: 'calc(100vh - 400px)' }}
                     />
                 </Col>
@@ -235,12 +238,15 @@ const DashboardComponent = () => {
                         dataSource={interviewData}
                         pagination={false}
                         size="small"
-                        title={() => <Title level={4} className="text-disabled text-medium text-bold">My Scheduled Interviews</Title>}
+                        title={() => <Space>
+                            <ScheduleOutlined className="text-disabled" />
+                            <Text className="text-disabled text-medium text-bold"> My Scheduled Interviews</Text>
+                        </Space>}
                         scroll={{ x: '100%', y: 'calc(100vh - 400px)' }}
                     />
                 </Col>
             </Row>
-        </Container>
+        </Container >
     )
 }
 
