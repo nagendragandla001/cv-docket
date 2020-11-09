@@ -1,6 +1,7 @@
 import { AreaChartOutlined, BarChartOutlined, BookOutlined, ExpandAltOutlined, HeartFilled, HeartOutlined, LineChartOutlined, PieChartOutlined, RadarChartOutlined, ScheduleOutlined } from '@ant-design/icons';
 import { Card, Col, Row, Skeleton, Space, Table, Typography } from 'antd';
 import React from 'react';
+import { Bar } from 'react-chartjs-2';
 import Container from '../../layout/container';
 import './Dashboard.less';
 
@@ -183,6 +184,27 @@ const DashboardComponent = () => {
             createdBy: 'David Raju'
         }
     ]
+
+    const barchart = {
+        labels: ['MS', 'Tesco', 'JP Morgan', 'TCS'],
+        datasets: [{
+            label: '',
+            data: [60, 30, 43, 53],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 80, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+            ],
+            borderWidth: 1
+        }]
+    }
     return (
         <Container>
             <Row className="dashboard m-top-1" gutter={[8, 8]}>
@@ -192,15 +214,19 @@ const DashboardComponent = () => {
                             <Card className="dashboard-card"
                                 hoverable={false}
                             >
-                                <Text className="text-bold text-disabled">Pie Chart Info</Text>
-                                <Skeleton active paragraph={{ rows: 2 }} />
+                                <Bar
+                                    data={barchart}
+                                    options={{
+                                        maintainAspectRatio: false
+                                    }}
+                                />
                             </Card>
                         </Col>
                         <Col span={6}>
                             <Card className="dashboard-card"
                                 hoverable={false}
                             >
-                                <Text className="text-bold text-disabled">Barchart Info</Text>
+                                <Text className="text-bold text-disabled">Donutchart Info</Text>
                                 <Skeleton active paragraph={{ rows: 2 }} />
                             </Card>
                         </Col>
